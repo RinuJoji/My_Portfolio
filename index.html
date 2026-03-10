@@ -9,7 +9,7 @@
   <meta name="keywords" content="frontend developer, UI/UX designer, React, Tailwind, Figma">
   <meta name="theme-color" content="#0a0a0a">
   <link rel="canonical" href="https://yourdomain.com">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="icon" type="image/png" href="assests/favicon.png">
 
   <meta property="og:title" content="Rinu Joji – Front-End Developer & UI/UX Designer">
   <meta property="og:description"
@@ -840,18 +840,15 @@
       justify-content: center;
     }
 
-    .project-thumb-inner {
+    /* Replaced .project-thumb-inner with .project-thumb-img */
+    .project-thumb-img {
       width: 100%;
       height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      color: var(--text-muted);
-      transition: transform 0.3s;
+      object-fit: cover;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    .project-card:hover .project-thumb-inner {
+    .project-card:hover .project-thumb-img {
       transform: scale(1.05);
     }
 
@@ -1019,6 +1016,10 @@
       color: var(--text-muted);
       transition: transform 0.3s;
       position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* This ensures the image fills the card without distortion */
+      display: block;
     }
 
     .about-img-card:hover {
@@ -1540,8 +1541,7 @@
       .hamburger {
         display: flex;
       }
-
-
+      
       #hero {
         padding: 120px 24px 60px;
       }
@@ -1704,17 +1704,19 @@
             Download Resume
           </a>
         </div>
+        <!--
         <div class="hero-stats">
           <div><span class="hero-stat-num">50+</span><span class="hero-stat-label">Projects</span></div>
           <div><span class="hero-stat-num">3+</span><span class="hero-stat-label">Years Exp.</span></div>
           <div><span class="hero-stat-num">40+</span><span class="hero-stat-label">Clients</span></div>
         </div>
+        -->
       </div>
       <div class="hero-visual">
         <div class="blob-wrapper">
           <div class="blob-bg"></div>
           <div class="blob-img-wrap">
-            <img src="assets/rinu.png" alt="Rinu Joji" width="420" height="420" loading="lazy">
+            <img src="assests/rinu.png" alt="Rinu Joji" width="420" height="420" loading="lazy">
           </div>
           <div class="blob-dot blob-dot1"></div>
           <div class="blob-dot blob-dot2"></div>
@@ -1740,8 +1742,7 @@
           <p class="section-desc" data-aos="fade-up" data-aos-delay="200" style="margin-bottom:0">A collection of web
             applications and design concepts where frontend engineering meets user-centric design.</p>
         </div>
-        <!-- <a href="#" class="btn-secondary" data-aos="fade-up">Browse All →</a> -->
-      </div>
+        </div>
       <div class="projects-grid" id="projects-grid"></div>
       <div class="view-all-wrap" data-aos="fade-up">
         <a href="https://github.com/RinuJoji?tab=repositories" class="btn-primary" target="_blank"
@@ -1764,9 +1765,9 @@
     <div class="section-inner">
       <div class="about-grid">
         <div class="about-images" data-aos="fade-right">
-          <div class="about-img-card">🖥️<span class="about-img-label">Developer</span></div>
-          <div class="about-img-card">🎨</div>
-          <div class="about-img-card">⚡</div>
+          <div class="about-img-card" ><img src="assests/about_vs.png" ><span class="about-img-label">Developer</span></div>
+          <div class="about-img-card"><img src="assests/about_claude.png"></div>
+          <div class="about-img-card"><img src="assests/about_gem.png"></div>
         </div>
         <div class="about-text">
           <p class="section-eyebrow" data-aos="fade-up">Get to Know Me</p>
@@ -1827,8 +1828,8 @@
 
   <footer>
     <div class="footer-inner">
-      <span class="footer-email">rinujoji33@gmail.com</span>
-      <span class="footer-name">Rinu Joji</span>
+      <span class="footer-email"><a href="mailto:rinujoji34@gmail.com?subject=Portfolio Inquiry&body=Hello Rinu," class="footer-email" style="text-decoration: none;">rinujoji34@gmail.com</a></span>
+      <a href="https://www.instagram.com/ugh.rinu/" target="_blank" rel="noopener noreferrer" class="footer-name" style="text-decoration: none; color: inherit;">Rinu Joji</a>
     </div>
   </footer>
 
@@ -1875,8 +1876,8 @@
   <script>
     const EMAILJS_CONFIG = {
       publicKey: 'ur3JufC4bU5CCce-h',
-      serviceId: 'YOUR_SERVICE_ID',
-      templateId: 'YOUR_TEMPLATE_ID',
+      serviceId: 'service_coawqi9',
+      templateId: 'template_yl1l0jk',
     };
 
     const techStack = [
@@ -1902,23 +1903,24 @@
       { name: 'Cursor', icon: '🖱️' },
     ];
 
+    // UPDATED PROJECTS DATA
     const projects = [
       {
-        emoji: '📊',
+        image: 'assests/project1.png', 
         title: 'Modern Dashboard UI',
         desc: 'A fully responsive admin dashboard with animated charts and modular design system.',
         tags: ['React', 'Tailwind', 'Framer Motion'],
         link: '#'
       },
       {
-        emoji: '📱',
-        title: 'FinTech Mobile App',
-        desc: 'A secure digital banking experience focused on accessibility and micro-interactions.',
+        image: 'assests/project2.png', 
+        title: 'Algorthm Visualizer',
+        desc: 'A powerfull algorithm visualizer for learning Data Structures.',
         tags: ['React Native', 'TypeScript', 'NestJS'],
         link: '#'
       },
       {
-        emoji: '🤖',
+        image: 'assests/project3.png', 
         title: 'AI Design Platform',
         desc: 'Conceptual landing page for an AI-assisted design tool showcasing generative UI.',
         tags: ['Figma', 'Next.js', 'Supabase'],
@@ -1957,11 +1959,12 @@
       document.getElementById('marquee').innerHTML = items;
     }
 
+    // UPDATED BUILD PROJECTS FUNCTION
     function buildProjects() {
       document.getElementById('projects-grid').innerHTML = projects.map((p, i) => `
     <div class="project-card" data-aos="fade-up" data-aos-delay="${i * 100}">
       <div class="project-thumb">
-        <div class="project-thumb-inner">${p.emoji}</div>
+        <img src="${p.image}" alt="${p.title}" class="project-thumb-img" loading="lazy">
         <div class="project-thumb-overlay"></div>
       </div>
       <div class="project-body">
